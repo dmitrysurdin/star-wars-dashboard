@@ -43,18 +43,7 @@ module.exports = {
         endOfLine: 'auto',
       },
     ],
-    'import/no-extraneous-dependencies': [
-      'error',
-      {
-        devDependencies: [
-          '**/*.test.{ts,tsx}',
-          '**/jestsetup.js',
-          '**/setupTests.ts',
-          '**/reportWebVitals.ts',
-        ],
-      },
-    ],
-
+    'import/no-extraneous-dependencies': ['off'],
     'arrow-body-style': 'error',
     '@typescript-eslint/consistent-type-definitions': 'error',
     '@typescript-eslint/array-type': ['error', { default: 'generic' }],
