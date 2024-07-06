@@ -43,10 +43,80 @@ module.exports = {
         endOfLine: 'auto',
       },
     ],
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: [
+          '**/*.test.{ts,tsx}',
+          '**/jestsetup.js',
+          '**/setupTests.ts',
+          '**/reportWebVitals.ts',
+        ],
+      },
+    ],
+
+    'arrow-body-style': 'error',
+    '@typescript-eslint/consistent-type-definitions': 'error',
+    '@typescript-eslint/array-type': ['error', { default: 'generic' }],
+    '@typescript-eslint/naming-convention': [
+      'error',
+      {
+        selector: 'variable',
+        format: ['camelCase', 'PascalCase', 'UPPER_CASE'],
+        filter: {
+          regex: '^(__typename)$',
+          match: false,
+        },
+      },
+    ],
+    'no-underscore-dangle': ['error', { allow: ['__typename'] }],
+    'no-restricted-exports': 'off',
+    'class-methods-use-this': 'off',
+    'react/require-default-props': 'off',
+    'react/jsx-uses-react': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'react/function-component-definition': [
+      'error',
+      {
+        namedComponents: 'arrow-function',
+        unnamedComponents: 'arrow-function',
+      },
+    ],
+    'jsx-a11y/no-static-element-interactions': 'off',
+    'jsx-a11y/control-has-associated-label': 'off',
+    'import/prefer-default-export': 'off',
+    'react/jsx-props-no-spreading': 'off',
+    'padding-line-between-statements': [
+      'error',
+      { blankLine: 'always', prev: '*', next: 'return' },
+      { blankLine: 'always', prev: 'block-like', next: '*' },
+      { blankLine: 'always', prev: ['const', 'let'], next: '*' },
+      { blankLine: 'any', prev: ['const', 'let'], next: ['const', 'let'] },
+    ],
   },
   overrides: [
     {
-      files: ['*.tsx', '*.ts', '*.js', '*.jsx'],
+      files: ['**/*{tsx,jsx}'],
+      rules: {
+        'react/prop-types': 'off',
+      },
+    },
+    {
+      files: ['*.js'],
+      rules: {
+        '@typescript-eslint/no-var-requires': 'off',
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
+      },
+    },
+    {
+      files: ['**/*.test.{js,jsx}'],
+      settings: {
+        'import/resolver': {
+          jest: {
+            jestConfigFile: './jest.config.js',
+          },
+        },
+      },
     },
   ],
 };
