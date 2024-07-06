@@ -2,8 +2,8 @@ import { RouteObject } from 'react-router';
 import { CommonLayout } from 'components/layouts/CommonLayout';
 import { Dashboard } from 'pages/Dashboard';
 import { Character } from 'pages/Character';
-import { AppRoutes } from 'const/AppRoutes';
-import { NotFound } from 'pages/NoFound';
+import { NotFound } from 'pages/NotFound';
+import { AppRoute } from 'const/AppRoute';
 
 export const routes: Array<RouteObject> = [
   {
@@ -11,15 +11,15 @@ export const routes: Array<RouteObject> = [
     children: [
       {
         element: <Dashboard />,
-        path: AppRoutes.Dashboard,
+        path: AppRoute.Dashboard,
       },
       {
         element: <Character />,
-        path: AppRoutes.Character,
+        path: AppRoute.Character,
       },
       {
         element: <NotFound />,
-        path: AppRoutes.NotFound,
+        path: AppRoute.NotFound,
       },
     ],
   },
