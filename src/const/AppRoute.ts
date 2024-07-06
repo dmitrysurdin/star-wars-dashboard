@@ -1,5 +1,5 @@
 export enum AppRoute {
   Dashboard = '/',
-  Character = '/character/:id',
+  People = '/people/:id',
   NotFound = '*',
 }

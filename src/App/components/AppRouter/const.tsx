@@ -15,7 +15,7 @@ export const routes: Array<RouteObject> = [
       },
       {
         element: <Character />,
-        path: AppRoute.Character,
+        path: AppRoute.People,
       },
       {
         element: <NotFound />,

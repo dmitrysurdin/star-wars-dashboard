@@ -39,8 +39,8 @@ describe('AppRouter', () => {
   });
 
   it.each([
-    [AppRoute.Dashboard, 'Dashboard page'],
-    [AppRoute.Character, 'Character page'],
+    [AppRoute.Dashboard, 'StarWars Dashboard'],
+    [AppRoute.People, 'Character page'],
   ])('page %s should contain page content', async (route, pageContent) => {
     renderRouterProvider(route);
 

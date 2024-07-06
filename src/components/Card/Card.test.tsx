@@ -20,7 +20,7 @@ describe('Card component', () => {
 
     const linkElement = screen.getByRole('link');
 
-    expect(linkElement).toHaveAttribute('href', `/character/${MOCK_ID}`);
+    expect(linkElement).toHaveAttribute('href', `/people/${MOCK_ID}`);
   });
 
   it('should render with default name when name prop is not provided', () => {
