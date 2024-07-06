@@ -5581,6 +5581,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"destyle.css@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "destyle.css@npm:4.0.1"
+  checksum: 10c0/fd969b763793583c9a5a5764548fd5271512390025a2020cff313f36f08d451d7db2dbe674370047529c78fe1fca2b45b63334bb27aad273acc969344d04ff91
+  languageName: node
+  linkType: hard
+
 "detect-newline@npm:^3.0.0":
   version: 3.1.0
   resolution: "detect-newline@npm:3.1.0"
@@ -12663,6 +12670,7 @@ __metadata:
     "@types/react-dom": "npm:^18.3.0"
     "@typescript-eslint/eslint-plugin": "npm:^7.15.0"
     "@typescript-eslint/parser": "npm:^7.15.0"
+    destyle.css: "npm:^4.0.1"
     eslint: "npm:^8.56.0"
     eslint-config-airbnb: "npm:^19.0.4"
     eslint-config-airbnb-typescript: "npm:^18.0.0"
