@@ -1,9 +1,9 @@
 import { RouteObject } from 'react-router';
-import { CommonLayout } from 'components/layouts/CommonLayout';
 import { Dashboard } from 'pages/Dashboard';
 import { Character } from 'pages/Character';
 import { NotFound } from 'pages/NotFound';
 import { AppRoute } from 'const/AppRoute';
+import { CommonLayout } from '../layouts/CommonLayout';
 
 export const routes: Array<RouteObject> = [
   {
