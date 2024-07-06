@@ -1,10 +1,12 @@
 import { Outlet } from 'react-router';
+import { Navbar } from 'components/NavBar';
 import styles from './CommonLayout.module.scss';
 
 export const CommonLayout = () => (
-  <div className={styles.layout}>
+  <>
+    <Navbar />
     <div className={styles.content}>
       <Outlet />
     </div>
-  </div>
+  </>
 );
