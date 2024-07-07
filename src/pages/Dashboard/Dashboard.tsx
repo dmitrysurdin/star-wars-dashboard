@@ -32,10 +32,8 @@ export const Dashboard: FC = () => {
   );
 
   const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const { value } = event.target;
-
-    setSearchText(value);
-    debouncedSearch(value);
+    setSearchText(event.target.value);
+    debouncedSearch(event.target.value);
   };
 
   if (error) {
