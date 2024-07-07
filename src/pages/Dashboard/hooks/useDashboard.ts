@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
-import { fetchPeople } from 'api';
-import { getMinimalPeopleData } from 'adapters/getMinimalPeopleData';
+import { getAllCharactersData } from 'adapters/getAllCharactersData';
 import { People } from 'types';
 import { useSearchParams } from 'react-router-dom';
+import { fetchAllCharacters } from 'api';
 import { DEFAULT_PAGE } from '../const';
 
 const DEFAULT_PEOPLE_DATA = {
@@ -23,13 +23,13 @@ export const useDashboard = () => {
 
   const searchParam = searchParams.get('search') ?? '';
 
-  const fetchData = useCallback(async () => {
+  const getDashboardData = useCallback(async () => {
     setLoading(true);
     setError(null);
 
     try {
-      const data = await fetchPeople({ page, search: searchParam });
-      const minimalPeopleData = getMinimalPeopleData(data);
+      const data = await fetchAllCharacters({ page, search: searchParam });
+      const minimalPeopleData = getAllCharactersData(data);
 
       setPeopleData(minimalPeopleData);
     } catch (e: unknown) {
@@ -41,8 +41,8 @@ export const useDashboard = () => {
   }, [page, searchParam]);
 
   useEffect(() => {
-    fetchData();
-  }, [fetchData]);
+    getDashboardData();
+  }, [getDashboardData]);
 
   return { data: peopleData, loading, error };
 };

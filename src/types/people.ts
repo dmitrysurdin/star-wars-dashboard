@@ -45,6 +45,4 @@ export interface CharacterDetails {
   eyeColor: string;
   birthYear: string;
   gender: string;
-  homeworld: string;
-  films: Array<string>;
 }

@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import { Grid, Pagination, TextField, Typography } from '@mui/material';
 import debounce from 'lodash/debounce';
 import { Card } from 'components/Card';
+import { Loader } from 'components/Loader/Loader';
 import { SEARCH_DEBOUNCE_TIMER } from 'const';
 import { useDashboard } from './hooks/useDashboard';
 import { usePagination } from './hooks/usePagination';
@@ -54,7 +55,7 @@ export const Dashboard: FC = () => {
         className={styles.searchField}
       />
       {loading ? (
-        <p>...Loading</p>
+        <Loader />
       ) : (
         <>
           <div className={styles.contentWrapper}>

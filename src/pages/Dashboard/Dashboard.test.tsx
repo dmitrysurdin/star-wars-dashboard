@@ -29,7 +29,7 @@ describe('Dashboard', () => {
 
     render(<Dashboard />, { wrapper: Router });
 
-    expect(screen.getByText('...Loading')).toBeVisible();
+    expect(screen.getByTestId('loader')).toBeVisible();
   });
 
   it('renders error state', () => {

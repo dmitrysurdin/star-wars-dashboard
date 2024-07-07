@@ -3,3 +3,7 @@
 .title {
   @include mixins.page-title;
 }
+
+.inputWrapper {
+  margin-bottom: 16px;
+}

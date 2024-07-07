@@ -1,1 +1,1 @@
-export { getMinimalPeopleData } from './getMinimalPeopleData';
+export { getAllCharactersData } from './getAllCharactersData';

@@ -9,6 +9,4 @@ export const getCharacterDetailsData = (person: PersonApiResponse): CharacterDet
   eyeColor: person?.eye_color ?? '',
   birthYear: person?.birth_year ?? '',
   gender: person?.gender ?? '',
-  homeworld: person?.homeworld ?? '',
-  films: person?.films ?? '',
 });

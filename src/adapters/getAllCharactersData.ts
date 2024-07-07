@@ -1,7 +1,7 @@
 import { MinimumPersonInfo, People, PeopleApiResponse, PersonApiResponse } from 'types/people';
 import { extractIdFromUrl } from 'utils/extractIdFromUrl';
 
-const getMinimalPersonData = (
+const getMinimumCharacterData = (
   peopleResults: Array<PersonApiResponse>
 ): Array<MinimumPersonInfo> => {
   if (!peopleResults) {
@@ -14,9 +14,9 @@ const getMinimalPersonData = (
   }));
 };
 
-export const getMinimalPeopleData = (people: PeopleApiResponse): People => ({
+export const getAllCharactersData = (people: PeopleApiResponse): People => ({
   count: people?.count ?? null,
   next: people?.next ?? null,
   previous: people?.previous ?? null,
-  results: getMinimalPersonData(people?.results),
+  results: getMinimumCharacterData(people?.results),
 });
