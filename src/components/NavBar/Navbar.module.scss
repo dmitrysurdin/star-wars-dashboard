@@ -1,3 +1,5 @@
+@use 'styles/variables';
+
 .wrapper {
   align-items: center;
   border-bottom: 1px solid #e5e8eb;
@@ -17,5 +19,5 @@
 }
 
 .text {
-  color: #121417;
+  color: variables.$black-dark;
 }

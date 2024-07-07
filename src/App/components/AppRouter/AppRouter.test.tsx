@@ -40,7 +40,7 @@ describe('AppRouter', () => {
 
   it.each([
     [AppRoute.Dashboard, 'All Characters'],
-    [AppRoute.People, 'Character page'],
+    [AppRoute.People, 'Character Details'],
   ])('page %s should contain page content', async (route, pageContent) => {
     renderRouterProvider(route);
 

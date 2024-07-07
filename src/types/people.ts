@@ -35,3 +35,16 @@ export interface People {
   previous: string | null;
   results: Array<MinimumPersonInfo>;
 }
+
+export interface CharacterDetails {
+  name: string;
+  height: string;
+  mass: string;
+  hairColor: string;
+  skinColor: string;
+  eyeColor: string;
+  birthYear: string;
+  gender: string;
+  homeworld: string;
+  films: Array<string>;
+}

@@ -1,0 +1,10 @@
+@use '../variables';
+
+@mixin page-title {
+  color: variables.$black-dark;
+
+  /* stylelint-disable-next-line*/
+  &:global(.MuiTypography-root) {
+    margin-bottom: 16px;
+  }
+}

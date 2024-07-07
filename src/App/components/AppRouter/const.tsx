@@ -1,6 +1,6 @@
 import { RouteObject } from 'react-router';
 import { Dashboard } from 'pages/Dashboard';
-import { Character } from 'pages/Character';
+import { CharacterDetails } from 'pages/CharacterDetails';
 import { NotFound } from 'pages/NotFound';
 import { AppRoute } from 'const/AppRoute';
 import { CommonLayout } from '../layouts/CommonLayout';
@@ -14,7 +14,7 @@ export const routes: Array<RouteObject> = [
         path: AppRoute.Dashboard,
       },
       {
-        element: <Character />,
+        element: <CharacterDetails />,
         path: AppRoute.People,
       },
       {
