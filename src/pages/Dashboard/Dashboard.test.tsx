@@ -1,7 +1,7 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
-import { SEARCH_DEBOUNCE_TIMER } from 'const';
+import { SEARCH_DEBOUNCE_TIMER } from './const';
 import { Dashboard } from './Dashboard';
 import { useDashboard } from './hooks/useDashboard';
 import { usePagination } from './hooks/usePagination';

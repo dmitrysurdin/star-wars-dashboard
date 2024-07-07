@@ -4,10 +4,9 @@ import { Grid, Pagination, TextField, Typography } from '@mui/material';
 import debounce from 'lodash/debounce';
 import { Card } from 'components/Card';
 import { Loader } from 'components/Loader/Loader';
-import { SEARCH_DEBOUNCE_TIMER } from 'const';
+import { SEARCH_DEBOUNCE_TIMER, DEFAULT_PAGE } from './const';
 import { useDashboard } from './hooks/useDashboard';
 import { usePagination } from './hooks/usePagination';
-import { DEFAULT_PAGE } from './const';
 import styles from './Dashboard.module.scss';
 
 export const Dashboard: FC = () => {
