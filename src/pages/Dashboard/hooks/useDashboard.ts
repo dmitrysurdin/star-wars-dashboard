@@ -24,9 +24,9 @@ export const useDashboard = () => {
     setError(null);
     try {
       const data = await fetchPeople({ page });
-      const minimalData = getMinimalPeopleData(data, page);
+      const minimalPeopleData = getMinimalPeopleData(data, page);
 
-      setPeopleData(minimalData);
+      setPeopleData(minimalPeopleData);
     } catch (e: unknown) {
       // @ts-ignore
       setError(e?.message ?? 'Failed to fetch data');
