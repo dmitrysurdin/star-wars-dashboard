@@ -24,7 +24,7 @@ describe('Dashboard', () => {
     usePaginationMock.mockReturnValue(mockPaginationData);
   });
 
-  it('renders loading state', () => {
+  it('should render loading state', () => {
     useDashboardMock.mockReturnValue(mockDashboardDataLoading);
 
     render(<Dashboard />, { wrapper: Router });
@@ -32,7 +32,7 @@ describe('Dashboard', () => {
     expect(screen.getByTestId('loader')).toBeVisible();
   });
 
-  it('renders error state', () => {
+  it('should render error state', () => {
     useDashboardMock.mockReturnValue(mockDashboardDataError);
     usePaginationMock.mockReturnValue(mockPaginationData);
 
@@ -41,7 +41,7 @@ describe('Dashboard', () => {
     expect(screen.getByText(ERROR_MESSAGE)).toBeVisible();
   });
 
-  it('renders data correctly', () => {
+  it('should render dashboard data correctly', () => {
     useDashboardMock.mockReturnValue(mockDashboardDataSuccess);
 
     render(<Dashboard />, { wrapper: Router });
@@ -52,7 +52,7 @@ describe('Dashboard', () => {
     expect(screen.getByText('Character 3')).toBeVisible();
   });
 
-  it('handles page change and updates URL', async () => {
+  it('should handle page change and updates URL', async () => {
     useDashboardMock.mockReturnValue(mockDashboardDataSuccess);
 
     render(<Dashboard />, { wrapper: Router });

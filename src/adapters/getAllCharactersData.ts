@@ -1,22 +1,27 @@
-import { MinimumPersonInfo, People, PeopleApiResponse, PersonApiResponse } from 'types/people';
+import {
+  MinimumCharacterInfo,
+  Characters,
+  CharactersApiResponse,
+  CharacterApiResponse,
+} from 'types/characters';
 import { extractIdFromUrl } from 'utils/extractIdFromUrl';
 
 const getMinimumCharacterData = (
-  peopleResults: Array<PersonApiResponse>
-): Array<MinimumPersonInfo> => {
-  if (!peopleResults) {
+  charactersResults: Array<CharacterApiResponse>
+): Array<MinimumCharacterInfo> => {
+  if (!charactersResults) {
     return [];
   }
 
-  return peopleResults.map((person) => ({
-    name: person?.name ?? '',
-    id: extractIdFromUrl(person.url),
+  return charactersResults.map((character) => ({
+    name: character?.name ?? '',
+    id: extractIdFromUrl(character.url),
   }));
 };
 
-export const getAllCharactersData = (people: PeopleApiResponse): People => ({
-  count: people?.count ?? null,
-  next: people?.next ?? null,
-  previous: people?.previous ?? null,
-  results: getMinimumCharacterData(people?.results),
+export const getAllCharactersData = (characters: CharactersApiResponse): Characters => ({
+  count: characters?.count ?? null,
+  next: characters?.next ?? null,
+  previous: characters?.previous ?? null,
+  results: getMinimumCharacterData(characters?.results),
 });

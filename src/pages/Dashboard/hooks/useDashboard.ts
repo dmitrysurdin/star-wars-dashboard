@@ -1,11 +1,11 @@
 import { useCallback, useEffect, useState } from 'react';
 import { getAllCharactersData } from 'adapters/getAllCharactersData';
-import { People } from 'types';
+import { Characters } from 'types';
 import { useSearchParams } from 'react-router-dom';
 import { fetchAllCharacters } from 'api';
 import { DEFAULT_PAGE } from '../const';
 
-const DEFAULT_PEOPLE_DATA = {
+const DEFAULT_CHARACTERS_DATA = {
   count: null,
   next: '',
   previous: '',
@@ -13,7 +13,7 @@ const DEFAULT_PEOPLE_DATA = {
 };
 
 export const useDashboard = () => {
-  const [peopleData, setPeopleData] = useState<People>(DEFAULT_PEOPLE_DATA);
+  const [characterData, setCharacterData] = useState<Characters>(DEFAULT_CHARACTERS_DATA);
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -29,9 +29,9 @@ export const useDashboard = () => {
 
     try {
       const data = await fetchAllCharacters({ page, search: searchParam });
-      const minimalPeopleData = getAllCharactersData(data);
+      const charactersData = getAllCharactersData(data);
 
-      setPeopleData(minimalPeopleData);
+      setCharacterData(charactersData);
     } catch (e: unknown) {
       // @ts-ignore
       setError(e?.message ?? 'Failed to fetch data');
@@ -44,5 +44,5 @@ export const useDashboard = () => {
     getDashboardData();
   }, [getDashboardData]);
 
-  return { data: peopleData, loading, error };
+  return { data: characterData, loading, error };
 };

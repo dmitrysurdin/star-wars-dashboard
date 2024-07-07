@@ -1,5 +1,5 @@
 import { APIUrl } from 'const';
-import { PersonApiResponse } from 'types';
+import { CharacterApiResponse } from 'types';
 import { api } from '../api';
 
 interface FetchCharacterDetailsByIdParams {
@@ -7,7 +7,7 @@ interface FetchCharacterDetailsByIdParams {
 }
 
 export const fetchCharacterDetailsById = async ({ id }: FetchCharacterDetailsByIdParams) => {
-  const response = await api.get<PersonApiResponse>({
+  const response = await api.get<CharacterApiResponse>({
     url: `${APIUrl.People}/${id}`,
   });
 

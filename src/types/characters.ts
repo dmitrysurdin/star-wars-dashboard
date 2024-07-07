@@ -1,4 +1,4 @@
-export interface PersonApiResponse {
+export interface CharacterApiResponse {
   name: string;
   height: string;
   mass: string;
@@ -17,23 +17,23 @@ export interface PersonApiResponse {
   url: string;
 }
 
-export interface PeopleApiResponse {
+export interface CharactersApiResponse {
   count: number;
   next: string | null;
   previous: string | null;
-  results: Array<PersonApiResponse>;
+  results: Array<CharacterApiResponse>;
 }
 
-export interface MinimumPersonInfo {
+export interface MinimumCharacterInfo {
   name: string;
   id: string;
 }
 
-export interface People {
+export interface Characters {
   count: number | null;
   next: string | null;
   previous: string | null;
-  results: Array<MinimumPersonInfo>;
+  results: Array<MinimumCharacterInfo>;
 }
 
 export interface CharacterDetails {
