@@ -1,2 +1,2 @@
-export { fetchAllCharacters } from './people/fetchAllCharacters';
-export { fetchCharacterDetailsById } from './people/fetchCharacterDetailsById';
+export { fetchAllCharacters } from './characters/fetchAllCharacters';
+export { fetchCharacterDetailsById } from './characters/fetchCharacterDetailsById';
