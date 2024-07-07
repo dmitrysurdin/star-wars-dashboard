@@ -1,23 +1,22 @@
 import { MinimumPersonInfo, People, PeopleApiResponse, PersonApiResponse } from 'types/people';
-import { ITEMS_PER_PAGE } from '../pages/Dashboard';
+import { extractIdFromUrl } from 'utils/extractIdFromUrl';
 
 const getMinimalPersonData = (
-  peopleResults: Array<PersonApiResponse>,
-  page: number
+  peopleResults: Array<PersonApiResponse>
 ): Array<MinimumPersonInfo> => {
   if (!peopleResults) {
     return [];
   }
 
-  return peopleResults.map((person, index) => ({
+  return peopleResults.map((person) => ({
     name: person?.name ?? '',
-    id: ((page - 1) * ITEMS_PER_PAGE + index + 1).toString(),
+    id: extractIdFromUrl(person.url),
   }));
 };
 
-export const getMinimalPeopleData = (people: PeopleApiResponse, page: number): People => ({
+export const getMinimalPeopleData = (people: PeopleApiResponse): People => ({
   count: people?.count ?? null,
   next: people?.next ?? null,
   previous: people?.previous ?? null,
-  results: getMinimalPersonData(people?.results, page),
+  results: getMinimalPersonData(people?.results),
 });

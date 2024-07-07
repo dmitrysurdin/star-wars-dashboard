@@ -29,7 +29,7 @@ export const useDashboard = () => {
 
     try {
       const data = await fetchPeople({ page, search: searchParam });
-      const minimalPeopleData = getMinimalPeopleData(data, page);
+      const minimalPeopleData = getMinimalPeopleData(data);
 
       setPeopleData(minimalPeopleData);
     } catch (e: unknown) {

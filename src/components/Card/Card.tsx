@@ -1,15 +1,14 @@
 import { CardActionArea, Card as CardMUI, CardContent, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { APIUrl } from 'const';
-import { DEFAULT_CARD_NAME } from './const';
 import styles from './Card.module.scss';
 
 interface CardProps {
-  name?: string;
+  name: string;
   id: string;
 }
 
-export const Card = ({ name = DEFAULT_CARD_NAME, id }: CardProps) => (
+export const Card = ({ name, id }: CardProps) => (
   <Link to={`${APIUrl.People}/${id}`}>
     <CardMUI className={styles.card}>
       <CardActionArea className={styles.cardActionWrapper}>
