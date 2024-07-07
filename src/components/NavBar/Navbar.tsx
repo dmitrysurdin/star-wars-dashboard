@@ -7,7 +7,7 @@ import { AppRoute } from '../../const';
 export const Navbar = () => (
   <div className={styles.wrapper}>
     <Link to={AppRoute.Dashboard} className={styles.link}>
-      <NavIcon className={styles.icon} />
+      <NavIcon className={styles.icon} data-testid="nav-icon" />
       <Typography variant="h6" component="h2" className={styles.text}>
         StarWars Dashboard
       </Typography>

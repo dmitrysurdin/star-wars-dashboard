@@ -2,9 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { Card } from './Card';
 import { DEFAULT_CARD_NAME } from './const';
-
-const MOCK_ID = '123';
-const MOCK_CARD_NAME = 'Test Character';
+import { MOCK_CARD_NAME, MOCK_ID } from './Card.mocks';
 
 describe('Card component', () => {
   it('should render card with given name', () => {

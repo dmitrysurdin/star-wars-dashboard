@@ -21,12 +21,11 @@
 }
 
 .searchField {
-  width: 100%;
   margin-bottom: 32px;
+  width: 100%;
 
   /* stylelint-disable-next-line*/
   &:global(.MuiFormControl-root) {
     margin-bottom: 32px;
   }
 }
-
