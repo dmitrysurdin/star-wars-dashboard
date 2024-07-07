@@ -77,5 +77,10 @@
       "last 1 safari version"
     ]
   },
-  "packageManager": "yarn@4.3.1"
+  "packageManager": "yarn@4.3.1",
+  "jest": {
+    "transformIgnorePatterns": [
+      "node_modules\/(?!axios)"
+    ]
+  }
 }

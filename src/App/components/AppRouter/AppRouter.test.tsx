@@ -1,5 +1,5 @@
 import { RouteObject, RouterProvider, createMemoryRouter } from 'react-router-dom';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import { AppRoute } from 'const';
 import { routes } from './const';
 import './AppRouter.mocks';
@@ -39,11 +39,13 @@ describe('AppRouter', () => {
   });
 
   it.each([
-    [AppRoute.Dashboard, 'StarWars Dashboard'],
+    [AppRoute.Dashboard, 'All Characters'],
     [AppRoute.People, 'Character page'],
   ])('page %s should contain page content', async (route, pageContent) => {
     renderRouterProvider(route);
 
-    expect(screen.getByText(pageContent)).toBeVisible();
+    await waitFor(() => {
+      expect(screen.getByText(pageContent)).toBeVisible();
+    });
   });
 });

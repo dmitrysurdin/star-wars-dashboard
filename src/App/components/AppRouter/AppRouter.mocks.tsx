@@ -1,5 +1,5 @@
 jest.mock('pages/Dashboard', () => ({
-  Dashboard: () => <div>StarWars Dashboard</div>,
+  Dashboard: () => <div>All Characters</div>,
 }));
 
 jest.mock('pages/Character', () => ({
