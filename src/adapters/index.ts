@@ -1,0 +1,1 @@
+export { getMinimalPeopleData } from './getMinimalPeopleData';
