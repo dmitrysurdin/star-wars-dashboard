@@ -19,3 +19,14 @@
   justify-content: center;
   width: 100%;
 }
+
+.searchField {
+  width: 100%;
+  margin-bottom: 32px;
+
+  /* stylelint-disable-next-line*/
+  &:global(.MuiFormControl-root) {
+    margin-bottom: 32px;
+  }
+}
+
