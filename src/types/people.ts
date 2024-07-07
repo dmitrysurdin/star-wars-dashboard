@@ -30,7 +30,7 @@ export interface MinimumPersonInfo {
 }
 
 export interface People {
-  count: number;
+  count: number | null;
   next: string | null;
   previous: string | null;
   results: Array<MinimumPersonInfo>;
