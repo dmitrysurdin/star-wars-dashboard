@@ -7,7 +7,8 @@ import styles from './CharacterDetails.module.scss';
 
 export const CharacterDetails: FC = () => {
   const { data: character, loading, error, setCharacterDetails } = useCharacterDetails();
-  const [isEditing, setIsEditing] = useState<boolean>(false);
+
+  const [isEditing, setIsEditing] = useState(false);
   const [editedCharacter, setEditedCharacter] = useState<CharacterDetailsType | null>(null);
 
   useEffect(() => {
@@ -28,9 +29,13 @@ export const CharacterDetails: FC = () => {
     );
   };
 
-  const handleSave = () => {
+  const handleSaveButtonClick = () => {
     setCharacterDetails(editedCharacter);
     setIsEditing(false);
+  };
+
+  const handleEditButtonClick = () => {
+    setIsEditing(true);
   };
 
   return (
@@ -64,11 +69,11 @@ export const CharacterDetails: FC = () => {
             )}
           </Grid>
           {isEditing ? (
-            <Button variant="contained" color="primary" onClick={handleSave}>
+            <Button variant="contained" color="primary" onClick={handleSaveButtonClick}>
               Save
             </Button>
           ) : (
-            <Button variant="contained" color="primary" onClick={() => setIsEditing(true)}>
+            <Button variant="contained" color="primary" onClick={handleEditButtonClick}>
               Edit
             </Button>
           )}
